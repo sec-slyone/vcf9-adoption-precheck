@@ -34,6 +34,10 @@
         -MinVCenterVersion 9.0.0 -RequiredFreeMemoryGB 256 -OutputPath C:\Reports
 
 .NOTES
+    DISCLAIMER: Community project, not an official Broadcom/VMware tool. Not yet validated against a
+    live vCenter. Review the code, test in a lab first, and verify every threshold against the official
+    Broadcom documentation for your target 9.x build before relying on the output. Provided as is.
+
     Requires: PowerShell 7.x recommended, VMware.PowerCLI 13.x or later (VCF.PowerCLI 9.x also works).
     Account: read-only vCenter role is sufficient for everything except esxcli path listing,
              which needs Host.Config.Storage visibility (any admin-class read role works).

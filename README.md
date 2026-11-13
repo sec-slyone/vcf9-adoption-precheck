@@ -1,5 +1,18 @@
 # VCF 9.x Adoption Pre-check
 
+> **Please read before use**
+>
+> This is a personal community project. It is not an official Broadcom or VMware tool, and it is not supported by Broadcom.
+>
+> The script has not yet been validated against a live vCenter. Before you run it anywhere that matters:
+>
+> - Read through the code yourself and make sure you understand what each check does.
+> - Run it against a lab or non-production vCenter first.
+> - Confirm the version minimums and supported configurations against the official Broadcom documentation and release notes for the exact VCF 9.x build you are targeting. Requirements change between releases.
+> - Treat the results as a starting point for your own assessment, not as a sign-off. The VCF Installer's built-in prerequisite check remains the authoritative gate.
+>
+> Issues and pull requests with corrections are welcome.
+
 A read-only PowerCLI script that looks over an existing vSphere environment before you bring it into VMware Cloud Foundation 9.x, either by converging it into a new VCF instance or importing it as a VI workload domain.
 
 The VCF Installer has its own prerequisite validation, and that stays the final gate. This script is for the weeks before that run, when you want a list of blockers you can hand to the platform team and work through, rather than finding them one at a time in the installer wizard.
@@ -84,6 +97,10 @@ Exit codes: `0` everything passed, `1` warnings, `2` at least one failure. Handy
 - Capacity is raw free resource and doesn't model HA admission control.
 - Storage and stretched-cluster support differs between converge and import and between 9.x builds, so those come back as WARN rather than FAIL.
 
+## Disclaimer
+
+Provided as is, without warranty of any kind. You are responsible for verifying the script and its results before relying on them in any environment. See the notice at the top of this page.
+
 ## Licence
 
-MIT. Use at your own risk, and test against a lab vCenter before pointing it at production.
+MIT. See [LICENSE](LICENSE).
